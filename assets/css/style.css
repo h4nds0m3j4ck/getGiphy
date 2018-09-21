@@ -1,0 +1,36 @@
+#header {
+	background-color: black;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+label {
+    font-size: 18px;
+    color: blueviolet;
+}
+
+#animal {
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#animalsSearch {
+	margin: 0 auto;
+    text-align: right;
+    margin-right: 35px;
+}
+
+#gifArea {
+	clear: both;
+	display: inline;
+	flex-wrap: wrap;
+}
+
+.animalGiphy {
+	padding: 2px;
+	width: 80%;
+}

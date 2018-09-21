@@ -1,63 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>| Gettin' Giphy Wit' It! |</title>
-    <link href="assets/css/reset.css" type="text/css" rel="stylesheet" />
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet" />
-
-
-
+    <title>Gettin' Giphy Wit' It!</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Animal Gif!</h1>
-        <p class="lead">This is a simple search to display your favorite animals!</p>
-        <hr class="my-4">
+    <div class="jumbotron" id="header">
 
+        <h1>Do you want to see your favorite animal?</h1>
+        <h4>Click the buttons to display GIPHYs of your favorite animals<br>Click the GIPHYs to pause and play<br>Search
+            to add more buttons!</h4>
     </div>
 
-    <!--Search Bar/ User Input-->
-    <div>
-        <form>
-            <div class="form-group">
-                <!--<label for="exampleFormControlInput1"></label>-->
-                <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Type name of animal here">
-                <button type="submit" class="submit" id="searchButton">Search</button>
-        </form>
-
+    <form class="form-inline" id="animalsSearch">
+        <div class="form-group">
+            <label for="animalsInput">Search for animals or other topics</label>
+            <input type="text" id="animalsInput">
         </div>
 
+        <input id="addAnimal" type="submit" value="submit">
+    </form>
 
+    <div class="row">
+        <div class="container">
+            <div class="btn-group inline pull-left">
+                <button class="btn btn-primary" id="animal" data-search="Dog">Dog</button>
+                <button class="btn btn-primary" id="animal" data-search="Cat">Cat</button>
+                <button class="btn btn-primary" id="animal" data-search="Horse">Horse</button>
+                <button class="btn btn-primary" id="animal" data-search="Fish">Fish</button>
+                <div id="myButtons"></div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="container">
+            <span>
+                <div id="gifArea"></div>
+            </span>
+        </div>
+    </div>
 
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
-
-
-
-
-        <!--Linking JS to the page-->
-        <script src="assets/js/app.js"></script>
-        <!--" " jQuery-->
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            var queryUrl = "https://api.giphy.com/v1/gifs/trending?api_key=GvPmqlquF9kXkVVuAhxaW4p2rzd5Fvvc&limit=10&q='animals'";
-
-            $.ajax({
-                url: queryUrl,
-                method: "GET"
-
-            }).then(function (response) {
-                console.log(response);
-            })
-        </script>
 </body>
 
 </html>
